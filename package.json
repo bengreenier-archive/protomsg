@@ -1,0 +1,26 @@
+{
+  "name": "protoparse",
+  "version": "0.1.0",
+  "description": "a little module to parse protocol messages over sockjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bengreenier/protoparse.git"
+  },
+  "keywords": [
+    "protocol",
+    "parsing"
+  ],
+  "author": "Ben Greenier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bengreenier/protoparse/issues"
+  },
+  "homepage": "https://github.com/bengreenier/protoparse#readme",
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
+}
