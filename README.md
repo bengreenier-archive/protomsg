@@ -58,8 +58,8 @@ where the event name will be `message:<id>` for any id. Also emit `malformed` if
 
 ### malformed
 
-occurs when a message doesn't follow the structure
+occurs when a message doesn't follow the structure. argment is the raw data of the message.
 
-### message:<id>
+### message:id
 
-occurs when a message is parsed properly, according to the structure.
+occurs when a message is parsed properly, according to the structure. argument is the parsed `Object`, then the seq.
