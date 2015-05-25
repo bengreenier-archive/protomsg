@@ -3,16 +3,16 @@
 var assert = require('assert');
 var EventEmitter = require('events').EventEmitter;
 
-var protoparse = require('../index');
+var protomsg = require('../index');
 
-describe("protoparse", function () {
+describe("protomsg", function () {
 	it("should emit events on server", function (done) {
 		var e = new EventEmitter();
 		e.write = function(d) {
 			e.emit("data", d);
 		};
 		
-		var parse = protoparse(e);
+		var parse = protomsg(e);
 		parse.on("message:test", function (data, seq) {
 			assert(data === "mine", "data should be 'mine'");
 			assert(seq === 1, "seq should be 1");
@@ -28,7 +28,7 @@ describe("protoparse", function () {
 			e.onmessage({data: d});
 		};
 		
-		var parse = protoparse(e);
+		var parse = protomsg(e);
 		parse.on("message:test", function (data, seq) {
 			assert(data === "mine", "data should be 'mine'");
 			assert(seq === 1, "seq should be 1");
@@ -46,7 +46,7 @@ describe("protoparse", function () {
 		
 		var callbackCount = 0;
 		
-		var parse = protoparse(e);
+		var parse = protomsg(e);
 		parse.once("malformed", function (d) {
 			assert(d.notJson === true, "d.notJson should be true");
 			callbackCount++;
@@ -81,21 +81,21 @@ describe("protoparse", function () {
 	
 	it("should fail if it type is not object", function () {
 		assert.throws(function () {
-			protoparse(1);
+			protomsg(1);
 		}, function (err) {
 			if ((err instanceof Error) && /should be an Object/.test(err)) {
 				return true;
 			}
 		}, "parsing 1 should throw");
 		assert.throws(function () {
-			protoparse(true);
+			protomsg(true);
 		}, function (err) {
 			if ((err instanceof Error) && /should be an Object/.test(err)) {
 				return true;
 			}
 		}, "parsing true should throw");
 		assert.throws(function () {
-			protoparse("hi");
+			protomsg("hi");
 		}, function (err) {
 			if ((err instanceof Error) && /should be an Object/.test(err)) {
 				return true;
@@ -107,7 +107,7 @@ describe("protoparse", function () {
 		var empty = {};
 		
 		assert.throws(function () {
-			protoparse(empty);
+			protomsg(empty);
 		}, function (err) {
 			if ((err instanceof Error) && /unable to determine/.test(err)) {
 				return true;

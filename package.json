@@ -1,5 +1,5 @@
 {
-  "name": "protoparse",
+  "name": "protomsg",
   "version": "0.1.0",
   "description": "a little module to parse protocol messages over sockjs",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bengreenier/protoparse.git"
+    "url": "git+https://github.com/bengreenier/protomsg.git"
   },
   "keywords": [
     "protocol",
@@ -17,9 +17,9 @@
   "author": "Ben Greenier",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bengreenier/protoparse/issues"
+    "url": "https://github.com/bengreenier/protomsg/issues"
   },
-  "homepage": "https://github.com/bengreenier/protoparse#readme",
+  "homepage": "https://github.com/bengreenier/protomsg#readme",
   "devDependencies": {
     "mocha": "^2.2.5"
   }

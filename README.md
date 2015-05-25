@@ -1,19 +1,19 @@
-# protoparse
+# protomsg
 
 [![Build Status](https://travis-ci.org/bengreenier/protoparse.svg?branch=master)](https://travis-ci.org/bengreenier/protoparse)
 
-a little module to parse protocol messages over sockjs. just `npm install protoparse`.
+a little module to parse protocol messages over sockjs. just `npm install protomsg`.
 
 # examples
 
 Server:
 ```
-var protoparse = require('protoparse');
+var protomsg = require('protomsg');
 
 // given a sockjs Connection object
 var conn;
 
-var emitter = protoparse(conn);
+var emitter = protomsg(conn);
 emitter.on("message:test", function (data, seq) {
 	// data = "hi", seq = 1
 });
@@ -26,11 +26,11 @@ var fakeMessage = JSON.stringify({id: "test", data: "hi", seq: 1});
 
 Client:
 ```
-var protoparse = require('protoparse');
+var protomsg = require('protomsg');
 
 var conn = new SockJS("//some/sock/server");
 
-var emitter = protoparse(conn);
+var emitter = protomsg(conn);
 
 emitter.on("message:test", function (data, seq) {
 	// data = "hi", seq = 1
