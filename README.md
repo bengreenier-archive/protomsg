@@ -1,6 +1,6 @@
 # protomsg
 
-[![Build Status](https://travis-ci.org/bengreenier/protoparse.svg?branch=master)](https://travis-ci.org/bengreenier/protoparse)
+[![Build Status](https://travis-ci.org/bengreenier/protomsg.svg?branch=master)](https://travis-ci.org/bengreenier/protomsg)
 
 a little module to parse protocol messages over sockjs. just `npm install protomsg`.
 
